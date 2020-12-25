@@ -10,12 +10,15 @@ public class  Test<T>{
             binaryHeap.insert(item);
         }
 
-        Comparable b=binaryHeap.findMin();
-        System.out.println(b.toString());
+//        Comparable b=binaryHeap.findMin();
+//        System.out.println(b.toString());
+//
+//        Comparable c=binaryHeap.deleteMin();
+//
+//        System.out.println(c);
 
-        Comparable c=binaryHeap.deleteMin();
-
-        System.out.println(c);
+        binaryHeap.deleteMin();
+        System.out.println(binaryHeap.findMin());
     }
 
 }
