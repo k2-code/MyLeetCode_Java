@@ -1,11 +1,13 @@
 package Part_6;
 
 import java.nio.BufferUnderflowException;
-
+/*
+* 二项队列
+* */
 public final class BinomialQueue<AnyType extends Comparable<? super AnyType>>
 {
     /**
-     * Construct the binomial queue.
+     * 构造函数
      */
     public BinomialQueue( )
     {
@@ -14,7 +16,7 @@ public final class BinomialQueue<AnyType extends Comparable<? super AnyType>>
     }
 
     /**
-     * Construct with a single item.
+     * 单个item构造
      */
     public BinomialQueue( AnyType item )
     {
@@ -24,15 +26,19 @@ public final class BinomialQueue<AnyType extends Comparable<? super AnyType>>
     }
 
 
+    /**
+     * 扩容
+     */
     private void expandTheTrees( int newNumTrees )
     {
+
         BinNode<AnyType> [ ] old = theTrees;
         int oldNumTrees = theTrees.length;
 
-        theTrees = new BinNode[ newNumTrees ];
-        for( int i = 0; i < Math.min( oldNumTrees, newNumTrees ); i++ )
-            theTrees[ i ] = old[ i ];
-        for( int i = oldNumTrees; i < newNumTrees; i++ )
+        theTrees = new BinNode[newNumTrees];
+        for(int i = 0; i < Math.min(oldNumTrees, newNumTrees); i++ )
+            theTrees[i] = old[i];
+        for(int i = oldNumTrees; i < newNumTrees; i++)
             theTrees[ i ] = null;
     }
 
@@ -47,6 +53,7 @@ public final class BinomialQueue<AnyType extends Comparable<? super AnyType>>
             return;
 
         currentSize += rhs.currentSize;
+
 
         if( currentSize > capacity( ) )
         {
