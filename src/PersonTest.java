@@ -4,6 +4,8 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Member;
 import java.lang.reflect.Method;
 
+import static java.lang.Class.forName;
+
 public class PersonTest {
 
     public static void main(String[] args) {
@@ -49,6 +51,11 @@ public class PersonTest {
            * */
             f2.setAccessible(true);
             System.out.println(f2);
+
+            Class str=forName("Person");
+            Person person= (Person) str.newInstance();
+            System.out.println("forName:"+str);
+            System.out.println("person:"+person);
 
             //创建这个类的一个对象
             Object p2=c2.newInstance();
