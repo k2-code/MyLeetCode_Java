@@ -1,14 +1,32 @@
 import java.io.File;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
-import java.lang.reflect.Member;
-import java.lang.reflect.Method;
+import java.lang.reflect.*;
+import java.util.*;
 
 import static java.lang.Class.forName;
 
 public class PersonTest {
 
     public static void main(String[] args) {
+
+        String array[]={"5","f","1","4","a"};
+        List<String> list= Arrays.asList(array);
+        list.sort(Comparator.reverseOrder());
+        //System.out.println(list);
+        LinkedHashSet<String> set=new LinkedHashSet<String>(){{
+            addAll(Arrays.asList(array));
+        }};
+
+        //StringBuffer
+        //Thread
+
+
+        set.stream().sorted();
+        System.out.println(set);
+
+        ArrayList list2= new ArrayList<String>();
+        list2.add("1");
+        list2.add(123);
+        Object item=list2.get(1);
 
         //
         Person p1=new Person();
