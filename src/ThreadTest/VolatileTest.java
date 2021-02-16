@@ -1,5 +1,7 @@
 package ThreadTest;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class VolatileTest {
 
     private static Object lock=new Object();
@@ -53,10 +55,14 @@ public class VolatileTest {
         //new Thread(new ThreadB()).start();
         //Thread.sleep(1000);
 
-        Thread t=new Thread(new Thread1());
-        t.start();
+       // Thread t=new Thread(new Thread1());
+       // t.start();
         //t.join();
-        new Thread(new Thread2()).start();
+        //new Thread(new Thread2()).start();
+
+        AtomicInteger atomicInteger=new AtomicInteger(10);
+        atomicInteger.getAndAdd(20);
+        System.out.println(atomicInteger);
 
     }
 }
